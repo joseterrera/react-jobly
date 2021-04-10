@@ -58,13 +58,13 @@ class JoblyApi {
   /** Get list of jobs (filtered by title if not undefined) */
 
   static async getJobs(title) {
-    let res = await this.request("jobs" {title});
+    let res = await this.request("jobs", {title});
     return res.jobs;
   }
 
   /** Apply to a job  */
   static async applyToJob(username, id) {
-    await. this.request(`users/${username}/jobs/${id}`, {}, "post")
+    await this.request(`users/${username}/jobs/${id}`, {}, "post")
   }
 
   /** Get token for login from username, password */
