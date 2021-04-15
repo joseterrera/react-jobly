@@ -52,3 +52,5 @@ function CompanyList() {
     </div>
   );
 }
+
+export default CompanyList;

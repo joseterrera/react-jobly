@@ -3,6 +3,22 @@ import { useRef, useState, useEffect } from "react";
 /** Custom hook for managing 'flash' messages
  *
  * This adds an item in state `active` which can be controlled by the component as desired. The component would typically `setActive(true)`
+ * to start displaying the message, and after `timeinMsec` active would go back to false, which would typically stop showing the message.
+ *
+ * In the component:
+ *
+ * const [myMsgFlag, setMyMsgFlag ] = useTimedMessage();
+ *
+ * function somethingDidntWork() {
+ * setMsgFlag(true);
+ * }
+ * return (
+ * { myMsgFlag ? <p>Oh no! </p> : null }
+ * )
+ *
+ *  * While this hook was written for showing flash messages, it's really just
+ * a hook for timed state clearing -- this same pattern could be useful for
+ * other tasks.
 */
 
 function useTimedMessage(timeInMsec=3000) {
